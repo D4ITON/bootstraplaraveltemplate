@@ -4,93 +4,173 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+           
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+        <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">SandhiGa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    @if (Route::has('login'))
+                    <div class="nav">
+                        @auth
+                            <li class="nav-item">
+                                <a class="btn btn-primary tombol" href="{{ url('/home') }}">Home</a>
+                            </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="btn btn-primary tombol" href="{{ route('login') }}">Login</a>
+                        </li>
+                            {{-- <a href="{{ route('register') }}">Register</a> --}}
+                        @endauth
+                    </div>
+                    @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                    <button class="btn btn-primary">iniciar sesion</button>
+    <!-- FIN NAVBAR -->
+
+    <!-- JUMBOTROM -->
+    <div class="jumbotron jumbotron-fluid">
+        <!-- <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center -->
+        <div class="container">
+            <h1 class="display-4">Get work done <span>faster</span><br> and <span>better</span> with us</h1>
+            <a href="#" class="btn btn-primary tombol">Our work</a>
+        </div>
+    </div>
+
+    <!-- FIN JUMBOTROM -->
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <!-- INFO PANEL -->
+
+        <div class="row justify-content-center">
+            <div class="col-10 info-panel">
+                <div class="row">
+                    <div class="col-lg">
+                        <img src="img/employee.png" alt="employee" class="float-left">
+                        <h4>24 Hours</h4>
+                        <P>Lorem ipsum dolor sit amet.</P>
+                    </div>
+                    <div class="col-lg">
+                        <img src="img/hires.png" alt="hires" class="float-left">
+                        <h4>High-Res</h4>
+                        <P>Lorem ipsum dolor sit amet.</P>
+                    </div>
+                    <div class="col-lg">
+                        <img src="img/security.png" alt="security" class="float-left">
+                        <h4>Security</h4>
+                        <P>Lorem ipsum dolor sit amet.</P>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- FIN INFO PANEL -->
+
+        <!-- WORKING SPACE -->
+
+        <div class="row workingspace">
+            <div class="col-lg-6">
+                <img src="img/workingspace.png" alt="workingspace" class="img-fluid">
+            </div>
+            <div class="col-lg-5">
+                <h3>You <span>work</span> like at <span>home</span></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolore cum iure mollitia?</p>
+                <a href="#" class="btn btn-primary tombol">Gallery</a>
+            </div>
+        </div>
+
+        <!-- FIN WORKING SPACE -->
+
+        <!-- TESTIMONIAL -->
+
+        <section class="testimonial">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h5>"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero ducimus itaque accusamus
+                        debitis, sit mollitia"</h5>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <figure class="figure">
+                        <img src="img/img1.png" class="figure-img img-fluid rounded-circle"
+                            alt="Test 1">
+                    </figure>
+                    <figure class="figure">
+                        <img src="img/img2.png" class="figure-img img-fluid rounded-circle main"
+                            alt="Test 2">
+                        <figcaption class="figure-caption">
+                            <h5>Sunny Ye</h5>
+                            <p>Designer</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="img/img3.png" class="figure-img img-fluid rounded-circle"
+                            alt="Test 3">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIN TESTIMONIAL -->
+
+        <!-- FOOTER -->
+
+        <div class="row footer">
+            <div class="col text-center">
+                <p>2019 All Rights Reserved By SandhiGa</p>
+            </div>
+        </div>
+
+        <!-- FIN FOOTER -->
+
+
+    </div>
+    <!-- FIN CONTAINER -->
+
+
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+
     </body>
 </html>
